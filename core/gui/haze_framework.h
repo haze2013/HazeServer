@@ -11,6 +11,7 @@ struct haze_gloabl_struct{
 	int (*init)(int argc ,char **argv);
 	void (*signal)(void);
 	void (*cycle)(void);
+	void (*exit)(void);
 	void *private;
 };
 

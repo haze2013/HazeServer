@@ -23,7 +23,6 @@ void haze_ui_init(void)
 
 	label = gtk_label_new("Proc info:");
         gtk_fixed_put(GTK_FIXED(frame) ,label ,30 ,20);
-        gtk_widget_show_all(window);
 
         label = gtk_label_new("");
         gtk_fixed_put(GTK_FIXED(frame) ,label ,60 ,50);

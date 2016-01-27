@@ -24,14 +24,6 @@
 #include <pwd.h>
 #include "haze_list.h"
 
-struct nl_change_buf{
-        struct list_head list;
-        int pid;
-        int result;
-        char proc[256];
-};
-
-//
 extern int haze_nl_sk;
 
 int haze_nl_init(int *nl_sd ,int protocol);

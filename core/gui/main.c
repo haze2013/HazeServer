@@ -8,5 +8,6 @@ int main(int argc ,char **argv)
 	
 	hgs.cycle();
 
+	hgs.exit();
 	return 0;
 }
