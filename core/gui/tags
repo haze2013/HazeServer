@@ -1,0 +1,59 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CC	Makefile	/^CC = gcc$/;"	m
+GTKLIB	Makefile	/^GTKLIB = `pkg-config --libs --cflags gtk+-2.0`$/;"	m
+INIT_LIST_HEAD	haze_list.h	12;"	d
+LIST_H	haze_list.h	2;"	d
+LIST_HEAD_INIT	haze_list.h	10;"	d
+OFFSET	haze_list.h	16;"	d
+OS_NLMSG_REQUEST	haze_nelk.c	136;"	d	file:
+Objs	Makefile	/^Objs = main.o common.o$/;"	m
+TARGET	Makefile	/^TARGET = xface$/;"	m
+__HAZE_APP__	haze_nelk.c	2;"	d	file:
+__HAZE_NELK__	haze_nelk.h	2;"	d
+__HAZE_VERIFY__	common.h	2;"	d
+__list_add	haze_list.h	/^static inline void __list_add(struct list_head *new,$/;"	f
+container_of	haze_list.h	17;"	d
+cycle	common.h	/^	void (*cycle)(void);$/;"	m	struct:haze_gloabl_struct
+frame	common.c	/^GtkWidget *window ,*frame ,*plus ,*minus;$/;"	v
+haze_cycle	common.c	/^void haze_cycle(void)$/;"	f
+haze_gloabl_struct	common.h	/^struct haze_gloabl_struct{$/;"	s
+haze_init	common.c	/^void haze_init(int argc ,char **argv)$/;"	f
+haze_nl_exit	haze_nelk.c	/^void haze_nl_exit(int fd)$/;"	f
+haze_nl_init	haze_nelk.c	/^int haze_nl_init(int *nl_sd ,int protocol)$/;"	f
+haze_nl_recv	haze_nelk.c	/^int haze_nl_recv(int sk_fd,void **emsg,int *emsg_len)$/;"	f
+haze_nl_send	haze_nelk.c	/^int haze_nl_send(int sk_fd,void *emsg,size_t len)$/;"	f
+haze_nl_sk	haze_nelk.c	/^int haze_nl_sk = 0;$/;"	v
+haze_signal	common.c	/^void haze_signal(void)$/;"	f
+haze_ui_init	common.c	/^void haze_ui_init(void)$/;"	f
+haze_verify_ok	common.c	/^void haze_verify_ok(GtkWidget *widget ,gpointer arg)$/;"	f
+hgs	common.c	/^struct haze_gloabl_struct hgs = {$/;"	v	typeref:struct:haze_gloabl_struct
+init	common.h	/^	void (*init)(int argc ,char **argv);$/;"	m	struct:haze_gloabl_struct
+label	common.c	/^GtkLabel *label;$/;"	v
+list	haze_nelk.h	/^        struct list_head list;$/;"	m	struct:nl_change_buf	typeref:struct:nl_change_buf::list_head
+list_add	haze_list.h	/^static inline void list_add(struct list_head *new, struct list_head *head)$/;"	f
+list_add_tail	haze_list.h	/^static inline void list_add_tail(struct list_head *new, struct list_head *head)$/;"	f
+list_del	haze_list.h	/^static inline void list_del(struct list_head *p)$/;"	f
+list_empty	haze_list.h	/^static inline int list_empty(const struct list_head *head)$/;"	f
+list_entry	haze_list.h	22;"	d
+list_for_each	haze_list.h	20;"	d
+list_for_each_prev	haze_list.h	21;"	d
+list_for_each_safe	haze_list.h	30;"	d
+list_head	haze_list.h	/^struct list_head {$/;"	s
+list_replace	haze_list.h	/^static inline void list_replace(struct list_head *old,$/;"	f
+main	haze_nelk.c	/^int main(int argc ,char **argv)$/;"	f
+main	main.c	/^int main(int argc ,char **argv)$/;"	f
+minus	common.c	/^GtkWidget *window ,*frame ,*plus ,*minus;$/;"	v
+next	haze_list.h	/^	struct list_head *prev, *next;$/;"	m	struct:list_head	typeref:struct:list_head::
+nl_change_buf	haze_nelk.h	/^struct nl_change_buf{$/;"	s
+pid	haze_nelk.h	/^        int pid;$/;"	m	struct:nl_change_buf
+plus	common.c	/^GtkWidget *window ,*frame ,*plus ,*minus;$/;"	v
+prev	haze_list.h	/^	struct list_head *prev, *next;$/;"	m	struct:list_head	typeref:struct:list_head::list_head
+proc	haze_nelk.h	/^        char proc[256];$/;"	m	struct:nl_change_buf
+result	haze_nelk.h	/^        int result;$/;"	m	struct:nl_change_buf
+signal	common.h	/^	void (*signal)(void);$/;"	m	struct:haze_gloabl_struct
+window	common.c	/^GtkWidget *window ,*frame ,*plus ,*minus;$/;"	v
