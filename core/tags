@@ -1,0 +1,36 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+KERNELBUILD	Makefile	/^KERNELBUILD := \/lib\/modules\/$(shell uname -r)\/build$/;"	m
+M	Makefile	/^	make -C $(KERNELBUILD) M=$(shell pwd) modules$/;"	m
+_DEBUG	testhook.c	10;"	d	file:
+_idt_descriptor	testhook.c	/^struct _idt_descriptor$/;"	s	file:
+_idtr	testhook.c	/^struct _idtr{$/;"	s	file:
+base	testhook.c	/^	unsigned int base;$/;"	m	struct:_idtr	file:
+close_cr	testhook.c	/^unsigned int close_cr(void)$/;"	f
+flags	testhook.c	/^	unsigned char none, flags;$/;"	m	struct:_idt_descriptor	file:
+g_old_sys_mkdir	testhook.c	/^asmlinkage long (*g_old_sys_mkdir)(const char __user *pathname, int mode);$/;"	v
+g_oldcr0	testhook.c	/^long g_oldcr0=0;$/;"	v
+g_sys_call_table	testhook.c	/^long * g_sys_call_table=NULL;$/;"	v
+get_sys_call_table	testhook.c	/^long * get_sys_call_table(void)$/;"	f
+haze_exit	testhook.c	/^module_exit(haze_exit);$/;"	v
+haze_exit	testhook.c	/^void haze_exit(void)$/;"	f
+haze_init	testhook.c	/^int haze_init(void)$/;"	f
+haze_init	testhook.c	/^module_init(haze_init);$/;"	v
+kperror	testhook.c	14;"	d	file:
+kperror	testhook.c	18;"	d	file:
+kprintf	testhook.c	13;"	d	file:
+kprintf	testhook.c	17;"	d	file:
+kprintk	testhook.c	12;"	d	file:
+kprintk	testhook.c	16;"	d	file:
+limit	testhook.c	/^	unsigned short limit;$/;"	m	struct:_idtr	file:
+my_sys_mkdir	testhook.c	/^asmlinkage long my_sys_mkdir(const char __user *pathname, int mode)$/;"	f
+none	testhook.c	/^	unsigned char none, flags;$/;"	m	struct:_idt_descriptor	file:
+offset_high	testhook.c	/^	unsigned short offset_high;$/;"	m	struct:_idt_descriptor	file:
+offset_low	testhook.c	/^	unsigned short offset_low;$/;"	m	struct:_idt_descriptor	file:
+open_cr	testhook.c	/^void open_cr(unsigned int oldval)$/;"	f
+sel	testhook.c	/^	unsigned short sel;$/;"	m	struct:_idt_descriptor	file:
+start_hook	testhook.c	/^void start_hook(void)$/;"	f
