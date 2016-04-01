@@ -3,42 +3,90 @@
 !_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
-!_TAG_PROGRAM_VERSION	5.8	//
-BIND	haze_signal.h	9;"	d
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BIND	haze_signal.h	15;"	d
 CC	Makefile	/^CC = gcc$/;"	m
-END_REGISTER_SIGNAL	haze_signal.h	7;"	d
-GTKLIB	Makefile	/^GTKLIB = `pkg-config --libs --cflags gtk+-2.0`$/;"	m
+GTKLIB	Makefile	/^GTKLIB = `pkg-config gtk+-2.0 --cflags --libs gthread-2.0` -std=gnu99 $/;"	m
+GTK_REGISTER_SIGNAL_END	haze_signal.h	10;"	d
+GTK_REGISTER_SIGNAL_START	haze_signal.h	6;"	d
 INIT_LIST_HEAD	haze_list.h	12;"	d
 LIST_H	haze_list.h	2;"	d
 LIST_HEAD_INIT	haze_list.h	10;"	d
+NLMSG_FLAG	netlink.h	/^enum NLMSG_FLAG{$/;"	g
+NLMSG_TYPE	netlink.h	/^enum NLMSG_TYPE {$/;"	g
 OFFSET	haze_list.h	16;"	d
-Objs	Makefile	/^Objs =  main.o haze_framework.o haze_nelk.o haze_ui.o haze_signal.o$/;"	m
-START_REGISTER_SIGNAL	haze_signal.h	6;"	d
+Objs	Makefile	/^Objs =  main.o haze_framework.o haze_signal.o haze_nelk.o haze_event.o haze_ui.o  $/;"	m
+REQUEST_LOGIN	netlink.h	/^	REQUEST_LOGIN  = 2,$/;"	e	enum:REQUEST_TYPE
+REQUEST_RELOAD	netlink.h	/^	REQUEST_RELOAD = 1,$/;"	e	enum:REQUEST_TYPE
+REQUEST_SWITCH	netlink.h	/^	REQUEST_SWITCH = 3,$/;"	e	enum:REQUEST_TYPE
+REQUEST_TYPE	netlink.h	/^enum REQUEST_TYPE{$/;"	g
+SEC_MSG_BASE	netlink.h	36;"	d
+SEC_NLMSG_AC	netlink.h	/^    SEC_NLMSG_AC,$/;"	e	enum:NLMSG_TYPE
+SEC_NLMSG_AUDIT	netlink.h	/^    SEC_NLMSG_AUDIT,    \/\/invoke by kernel$/;"	e	enum:NLMSG_TYPE
+SEC_NLMSG_DATA	haze_nelk.c	27;"	d	file:
+SEC_NLMSG_DATA	haze_nelk.c	29;"	d	file:
+SEC_NLMSG_DATA	netlink.c	27;"	d	file:
+SEC_NLMSG_DATA	netlink.c	29;"	d	file:
+SEC_NLMSG_EXCEPT	netlink.h	/^    SEC_NLMSG_EXCEPT,\/\/ for gray file update 2014.8.22$/;"	e	enum:NLMSG_TYPE
+SEC_NLMSG_FLAG_FAILED	netlink.h	/^    SEC_NLMSG_FLAG_FAILED$/;"	e	enum:NLMSG_FLAG
+SEC_NLMSG_FLAG_SUCCESS	netlink.h	/^    SEC_NLMSG_FLAG_SUCCESS,$/;"	e	enum:NLMSG_FLAG
+SEC_NLMSG_HELO	netlink.h	/^    SEC_NLMSG_HELO = SEC_MSG_BASE,$/;"	e	enum:NLMSG_TYPE
+SEC_NLMSG_ISPROTECT	netlink.h	/^    SEC_NLMSG_ISPROTECT,$/;"	e	enum:NLMSG_TYPE
+SEC_NLMSG_PLUGIN	netlink.h	/^    SEC_NLMSG_PLUGIN,$/;"	e	enum:NLMSG_TYPE
+SEC_NLMSG_QUIT	netlink.h	/^    SEC_NLMSG_QUIT,$/;"	e	enum:NLMSG_TYPE
+SEC_NLMSG_REQUEST	netlink.h	/^    SEC_NLMSG_REQUEST,  \/\/invoke by user  $/;"	e	enum:NLMSG_TYPE
+SEC_NLMSG_RESPONSE	netlink.h	/^    SEC_NLMSG_RESPONSE,$/;"	e	enum:NLMSG_TYPE
+SEC_NLMSG_SSDO	netlink.h	/^    SEC_NLMSG_SSDO,$/;"	e	enum:NLMSG_TYPE
+SEC_NLMSG_SUPERINIT	netlink.h	/^    SEC_NLMSG_SUPERINIT,$/;"	e	enum:NLMSG_TYPE
+SEC_NLMSG_SWINSTALL	netlink.h	/^    SEC_NLMSG_SWINSTALL,$/;"	e	enum:NLMSG_TYPE
 TARGET	Makefile	/^TARGET = xface$/;"	m
-__HAZE_APP__	haze_nelk.c	2;"	d	file:
-__HAZE_NELK__	haze_nelk.h	2;"	d
+__HAZE_EVENT__	haze_event.h	2;"	d
 __HAZE_SIGNAL__	haze_signal.h	2;"	d
+__HAZE_UI__	back/haze_ui.h	2;"	d
+__HAZE_UI__	haze_ui.h	2;"	d
 __HAZE_VERIFY__	haze_framework.h	2;"	d
-__HAZE_VERIFY__	haze_ui.h	2;"	d
+__NETLINK_H__	haze_nelk.h	2;"	d
+__NETLINK_H__	netlink.h	2;"	d
 __list_add	haze_list.h	/^static inline void __list_add(struct list_head *new,$/;"	f
+_nelk_recv	haze_nelk.c	/^int _nelk_recv(struct sk_buff *skb)$/;"	f
+_nelk_recv	netlink.c	/^int _nelk_recv(struct sk_buff *skb)$/;"	f
+btn_no	back/haze_ui.c	/^GtkWidget *window ,*frame ,*btn_yes ,*btn_no ,*label;$/;"	v
+btn_no	back/haze_ui.h	/^	GtkWidget *btn_no;$/;"	m	struct:haze_ui_struct
+btn_no	haze_ui.h	/^	GtkWidget *btn_no;$/;"	m	struct:haze_ui_struct
+btn_yes	back/haze_ui.c	/^GtkWidget *window ,*frame ,*btn_yes ,*btn_no ,*label;$/;"	v
+btn_yes	back/haze_ui.h	/^	GtkWidget *btn_yes;$/;"	m	struct:haze_ui_struct
+btn_yes	haze_ui.h	/^	GtkWidget *btn_yes;$/;"	m	struct:haze_ui_struct
 container_of	haze_list.h	17;"	d
 cycle	haze_framework.h	/^	void (*cycle)(void);$/;"	m	struct:haze_gloabl_struct
-frame	haze_ui.c	/^GtkWidget *window ,*frame ,*plus ,*minus;$/;"	v
+enable	back/haze_ui.h	/^	int enable;$/;"	m	struct:haze_ui_struct
+enable	haze_ui.h	/^	int enable;$/;"	m	struct:haze_ui_struct
+flag	netlink.h	/^    int flag;$/;"	m	struct:kexcept_node
+frame	back/haze_ui.c	/^GtkWidget *window ,*frame ,*btn_yes ,*btn_no ,*label;$/;"	v
+frame	back/haze_ui.h	/^	GtkWidget *frame;$/;"	m	struct:haze_ui_struct
+frame	haze_ui.h	/^	GtkWidget *frame;$/;"	m	struct:haze_ui_struct
+hash	netlink.h	/^    char hash[FILE_HASH_SIZE];$/;"	m	struct:kexcept_node
 haze_cycle	haze_framework.c	/^void haze_cycle(void)$/;"	f
 haze_gloabl_struct	haze_framework.h	/^struct haze_gloabl_struct{$/;"	s
 haze_init	haze_framework.c	/^int haze_init(int argc ,char **argv)$/;"	f
-haze_nl_exit	haze_nelk.c	/^void haze_nl_exit(int fd)$/;"	f
-haze_nl_init	haze_nelk.c	/^int haze_nl_init(int *nl_sd ,int protocol)$/;"	f
-haze_nl_recv	haze_nelk.c	/^int haze_nl_recv(int sk_fd,void **emsg,int *emsg_len)$/;"	f
-haze_nl_send	haze_nelk.c	/^int haze_nl_send(int sk_fd,void *emsg,size_t len)$/;"	f
-haze_nl_sk	haze_nelk.c	/^int haze_nl_sk = 0;$/;"	v
+haze_main_fun	haze_signal.c	/^void haze_main_fun(GtkWidget *widget ,gpointer arg)$/;"	f
 haze_signal	haze_framework.c	/^void haze_signal(void)$/;"	f
-haze_ui_init	haze_ui.c	/^void haze_ui_init(void)$/;"	f
+haze_ui_init	back/haze_ui.c	/^void haze_ui_init(struct haze_ui_struct *arg)$/;"	f
+haze_ui_init	haze_ui.c	/^void haze_ui_init(struct haze_ui_struct *arg)$/;"	f
+haze_ui_struct	back/haze_ui.h	/^struct haze_ui_struct{$/;"	s
+haze_ui_struct	haze_ui.h	/^struct haze_ui_struct{$/;"	s
 haze_verify_ok	haze_signal.c	/^void haze_verify_ok(GtkWidget *widget ,gpointer arg)$/;"	f
+haze_work_init	haze_event.c	/^void haze_work_init(struct haze_ui_struct *arg)$/;"	f
 hgs	haze_framework.c	/^struct haze_gloabl_struct hgs = {$/;"	v	typeref:struct:haze_gloabl_struct
+hus	back/haze_ui.c	/^struct haze_ui_struct hus = {$/;"	v	typeref:struct:haze_ui_struct
+hus	haze_framework.c	/^struct haze_ui_struct hus;$/;"	v	typeref:struct:haze_ui_struct
 init	haze_framework.h	/^	int (*init)(int argc ,char **argv);$/;"	m	struct:haze_gloabl_struct
-label	haze_ui.c	/^GtkWidget *label;$/;"	v
-list	haze_nelk.h	/^        struct list_head list;$/;"	m	struct:nl_change_buf	typeref:struct:nl_change_buf::list_head
+kexcepram_t	netlink.h	/^}__attribute__((packed)) kexcepram_t;$/;"	t	typeref:struct:kexcept_program
+kexcept_node	netlink.h	/^typedef struct kexcept_node{$/;"	s
+kexcept_node_t	netlink.h	/^}__attribute__((packed)) kexcept_node_t;$/;"	t	typeref:struct:kexcept_node
+kexcept_program	netlink.h	/^typedef struct kexcept_program{$/;"	s
+label	back/haze_ui.c	/^GtkWidget *window ,*frame ,*btn_yes ,*btn_no ,*label;$/;"	v
+label	back/haze_ui.h	/^	GtkWidget *label;$/;"	m	struct:haze_ui_struct
+label	haze_ui.h	/^	GtkWidget *label;$/;"	m	struct:haze_ui_struct
 list_add	haze_list.h	/^static inline void list_add(struct list_head *new, struct list_head *head)$/;"	f
 list_add_tail	haze_list.h	/^static inline void list_add_tail(struct list_head *new, struct list_head *head)$/;"	f
 list_del	haze_list.h	/^static inline void list_del(struct list_head *p)$/;"	f
@@ -49,14 +97,60 @@ list_for_each_prev	haze_list.h	21;"	d
 list_for_each_safe	haze_list.h	30;"	d
 list_head	haze_list.h	/^struct list_head {$/;"	s
 list_replace	haze_list.h	/^static inline void list_replace(struct list_head *old,$/;"	f
+list_type	netlink.h	/^    int list_type;$/;"	m	struct:kexcept_program
+lock	haze_nelk.h	/^    struct mutex lock;$/;"	m	struct:netlink_socket_	typeref:struct:netlink_socket_::mutex
+lock	netlink.h	/^    struct mutex lock;$/;"	m	struct:netlink_socket_	typeref:struct:netlink_socket_::mutex
 main	main.c	/^int main(int argc ,char **argv)$/;"	f
-minus	haze_ui.c	/^GtkWidget *window ,*frame ,*plus ,*minus;$/;"	v
+master_pid	haze_nelk.h	/^    pid_t master_pid;$/;"	m	struct:netlink_socket_
+master_pid	netlink.h	/^    pid_t master_pid;$/;"	m	struct:netlink_socket_
+n_size	netlink.h	/^    int n_size;$/;"	m	struct:kexcept_program
+nelk_init	haze_nelk.c	/^int nelk_init(void)$/;"	f
+nelk_init	netlink.c	/^int nelk_init(void)$/;"	f
+nelk_recv	haze_nelk.c	/^void nelk_recv(struct sk_buff *skb)$/;"	f
+nelk_recv	haze_nelk.c	/^void nelk_recv(struct sock *sk, int len)$/;"	f
+nelk_recv	netlink.c	/^void nelk_recv(struct sk_buff *skb)$/;"	f
+nelk_recv	netlink.c	/^void nelk_recv(struct sock *sk, int len)$/;"	f
+nelk_recv_exceptprogram	haze_nelk.c	/^static int nelk_recv_exceptprogram(struct sk_buff *skb)$/;"	f	file:
+nelk_recv_exceptprogram	netlink.c	/^static int nelk_recv_exceptprogram(struct sk_buff *skb)$/;"	f	file:
+nelk_recv_helo	haze_nelk.c	/^static int nelk_recv_helo(struct sk_buff *skb)$/;"	f	file:
+nelk_recv_helo	netlink.c	/^static int nelk_recv_helo(struct sk_buff *skb)$/;"	f	file:
+nelk_recv_protect	haze_nelk.c	/^static int nelk_recv_protect(struct sk_buff *skb)$/;"	f	file:
+nelk_recv_protect	netlink.c	/^static int nelk_recv_protect(struct sk_buff *skb)$/;"	f	file:
+nelk_recv_quit	haze_nelk.c	/^static int nelk_recv_quit(struct sk_buff *skb)$/;"	f	file:
+nelk_recv_quit	netlink.c	/^static int nelk_recv_quit(struct sk_buff *skb)$/;"	f	file:
+nelk_recv_request	haze_nelk.c	/^static int nelk_recv_request(struct sk_buff *skb)$/;"	f	file:
+nelk_recv_request	netlink.c	/^static int nelk_recv_request(struct sk_buff *skb)$/;"	f	file:
+nelk_recv_ssdo	haze_nelk.c	/^static int nelk_recv_ssdo(struct sk_buff *skb)$/;"	f	file:
+nelk_recv_ssdo	netlink.c	/^static int nelk_recv_ssdo(struct sk_buff *skb)$/;"	f	file:
+nelk_rele	haze_nelk.c	/^void nelk_rele(netlink_socket_t *nelk)$/;"	f
+nelk_rele	netlink.c	/^void nelk_rele(netlink_socket_t *nelk)$/;"	f
+nelk_send	haze_nelk.c	/^int nelk_send(pid_t pid, void *data, int datalen, u16 msg_type, u16 msg_flags)$/;"	f
+nelk_send	netlink.c	/^int nelk_send(pid_t pid, void *data, int datalen, u16 msg_type, u16 msg_flags)$/;"	f
+nelkskt	haze_nelk.c	/^netlink_socket_t nelkskt;$/;"	v
+nelkskt	netlink.c	/^netlink_socket_t nelkskt;$/;"	v
+netlik_lock_destory	haze_nelk.h	22;"	d
+netlik_lock_destory	netlink.h	23;"	d
+netlink_lock	haze_nelk.h	16;"	d
+netlink_lock	netlink.h	17;"	d
+netlink_lock_init	haze_nelk.h	13;"	d
+netlink_lock_init	netlink.h	14;"	d
+netlink_socket_	haze_nelk.h	/^typedef struct netlink_socket_{$/;"	s
+netlink_socket_	netlink.h	/^typedef struct netlink_socket_{$/;"	s
+netlink_socket_t	haze_nelk.h	/^} netlink_socket_t;$/;"	t	typeref:struct:netlink_socket_
+netlink_socket_t	netlink.h	/^} netlink_socket_t;$/;"	t	typeref:struct:netlink_socket_
+netlink_unlock	haze_nelk.h	19;"	d
+netlink_unlock	netlink.h	20;"	d
 next	haze_list.h	/^	struct list_head *prev, *next;$/;"	m	struct:list_head	typeref:struct:list_head::
-nl_change_buf	haze_nelk.h	/^struct nl_change_buf{$/;"	s
-pid	haze_nelk.h	/^        int pid;$/;"	m	struct:nl_change_buf
-plus	haze_ui.c	/^GtkWidget *window ,*frame ,*plus ,*minus;$/;"	v
+nodes	netlink.h	/^    kexcept_node_t nodes[20];$/;"	m	struct:kexcept_program
+operation	netlink.h	/^    int operation;$/;"	m	struct:kexcept_node
 prev	haze_list.h	/^	struct list_head *prev, *next;$/;"	m	struct:list_head	typeref:struct:list_head::list_head
-proc	haze_nelk.h	/^        char proc[256];$/;"	m	struct:nl_change_buf
-result	haze_nelk.h	/^        int result;$/;"	m	struct:nl_change_buf
+sec_isprotect	haze_nelk.c	/^int sec_isprotect = 1;$/;"	v
+sec_isprotect	netlink.c	/^int sec_isprotect = 1;$/;"	v
 signal	haze_framework.h	/^	void (*signal)(void);$/;"	m	struct:haze_gloabl_struct
-window	haze_ui.c	/^GtkWidget *window ,*frame ,*plus ,*minus;$/;"	v
+sock	haze_nelk.h	/^    struct sock *sock; $/;"	m	struct:netlink_socket_	typeref:struct:netlink_socket_::sock
+sock	netlink.h	/^    struct sock *sock; $/;"	m	struct:netlink_socket_	typeref:struct:netlink_socket_::sock
+unit	haze_nelk.h	/^    int unit;$/;"	m	struct:netlink_socket_
+unit	netlink.h	/^    int unit;$/;"	m	struct:netlink_socket_
+window	back/haze_ui.c	/^GtkWidget *window ,*frame ,*btn_yes ,*btn_no ,*label;$/;"	v
+window	back/haze_ui.h	/^	GtkWidget *window;$/;"	m	struct:haze_ui_struct
+window	haze_ui.h	/^	GtkWidget *window;$/;"	m	struct:haze_ui_struct

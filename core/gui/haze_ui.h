@@ -1,13 +1,15 @@
-#ifndef __HAZE_VERIFY__
-#define __HAZE_VERIFY__
-#include <gtk/gtk.h>
-#include <gtk/gtklabel.h>
+#ifndef __HAZE_UI__
+#define __HAZE_UI__
+#include "haze_common.h"
 
-void haze_ui_init(void);
-extern GtkWidget *window;
-extern GtkWidget *frame;
-extern GtkWidget *plus;
-extern GtkWidget *minus;
-extern GtkWidget *label;
+struct haze_ui_struct{
+	GtkWidget *window;
+	GtkWidget *frame;
+	GtkWidget *btn_yes;
+	GtkWidget *btn_no;
+	GtkWidget *label;
+	int enable;
+};
 
+void haze_ui_init(struct haze_ui_struct *);
 #endif

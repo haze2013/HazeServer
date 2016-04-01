@@ -1,10 +1,16 @@
 #ifndef __HAZE_SIGNAL__
 #define __HAZE_SIGNAL__
-#include <gtk/gtk.h>
-#include <gtk/gtklabel.h>
+#include "haze_common.h"
+#include "haze_ui.h"
 
-#define START_REGISTER_SIGNAL
-#define END_REGISTER_SIGNAL
+#define GTK_REGISTER_SIGNAL_START  \
+do{ \
+	if(hus.enable){
+
+#define GTK_REGISTER_SIGNAL_END  \
+	} \
+}while(0);	
+	
 
 #define BIND(target ,event ,func ,args) \
 do{	\
@@ -16,4 +22,5 @@ do{	\
 
 void haze_main_fun(GtkWidget *widget ,gpointer arg);
 void haze_verify_ok(GtkWidget *widget ,gpointer arg);
+
 #endif

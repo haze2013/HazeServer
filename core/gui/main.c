@@ -2,12 +2,12 @@
 
 int main(int argc ,char **argv)
 {
-	assert(hgs.init(argc ,argv) >= 0);
+//	assert(hgs.init(argc ,argv) >= 0);
+	hgs.init(argc ,argv);
 
 	hgs.signal();
 	
 	hgs.cycle();
 
-	hgs.exit();
 	return 0;
 }

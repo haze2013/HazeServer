@@ -99,7 +99,7 @@ int _nelk_recv(struct sk_buff *skb)
 {
     struct nlmsghdr *nlhdr = NULL;
     if(skb == NULL){
-        printk("netlink recvive error\n");
+        printkerr("netlink recvive error\n");
         return -1;
     }
    // printkdbg("come into nelk_recv()\n");
@@ -142,7 +142,7 @@ int _nelk_recv(struct sk_buff *skb)
 	    }
 	    break;
 	default:
-            printk("netlink recvice unkown message type [%0x]\n",nlhdr->nlmsg_type);
+            printkerr("netlink recvice unkown message type [%0x]\n",nlhdr->nlmsg_type);
             break;
     }
     //printkdbg("leave from nelk_recv()\n");
@@ -159,7 +159,7 @@ re_receive:
         goto re_receive;
     }
     if(rc < 0){
-        printk("netlink recvice message error\n");
+        printkerr("netlink recvice message error\n");
         return;
     }
     if(_nelk_recv(skb) < 0){
@@ -187,13 +187,13 @@ int nelk_send(pid_t pid, void *data, int datalen, u16 msg_type, u16 msg_flags)
 	size_t size = 0;
 	int ret = 0;
 	if(nelkskt.sock == NULL){
-		printk("netlink socket error\n");
+		printkerr("netlink socket error\n");
 		return -1;
 	}
 	size = (data && datalen) ? datalen:0;
 	skb = alloc_skb(NLMSG_SPACE(size), GFP_KERNEL);
 	if(skb == NULL){
-		printk("netlink send error: no enough memory\n");
+		printkerr("netlink send error: no enough memory\n");
 		return -ENOMEM;
 	}
 	nlhdr = NLMSG_PUT(skb, pid, 0, msg_type, size);
@@ -206,7 +206,7 @@ int nelk_send(pid_t pid, void *data, int datalen, u16 msg_type, u16 msg_flags)
 //	schedule_timeout_uninterruptible(sec_cfg.nltimeout);
 	ret = netlink_unicast(nelkskt.sock, skb, pid, 0);
 	if(ret < 0){
-//		printk("netlink send error ret:%d\n",ret);
+//		printkerr("netlink send error ret:%d\n",ret);
 	}
 	return 0;
 nlmsg_failure:
@@ -232,7 +232,7 @@ int nelk_send(pid_t pid, void *data, int datalen, u16 msg_type, u16 msg_flags)
     memcpy(msg, data, datalen);
     ret = nlmsg_unicast(nelkskt.sock, skb, pid);
     if(ret < 0){
-		printk("netlink unicast(send) error\n");
+		printkerr("netlink unicast(send) error\n");
     }
     return 0;
 
@@ -245,7 +245,7 @@ out_kfree_skb:
 int nelk_init(void)
 {
 	nelkskt.master_pid = 0;
-	nelkskt.unit = 31;
+	nelkskt.unit = sec_cfg.netlink?sec_cfg.netlink:31;
 	netlink_lock_init(nelkskt.lock);
 #if (LINUX_VERSION_CODE <= KERNEL_VERSION(2,6,18))
 	nelkskt.sock = netlink_kernel_create(nelkskt.unit, 0, nelk_recv, THIS_MODULE); 
@@ -260,7 +260,7 @@ int nelk_init(void)
 }
 #endif
 	if(nelkskt.sock == NULL){
-		printk("create kernel netlink error\n");
+		printkerr("create kernel netlink error\n");
 		goto err;
 	}
 	nelkskt.sock->sk_sndtimeo = 10;

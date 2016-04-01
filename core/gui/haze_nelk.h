@@ -1,38 +1,37 @@
-#ifndef __HAZE_NELK__
-#define __HAZE_NELK__
-#include <stdio.h>
-#include <stdlib.h>
-#include <errno.h>
-#include <unistd.h>
-#include <signal.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <signal.h>
-#include <time.h>
-#include <sys/stat.h>
-#include <unistd.h>
-#include <string.h>
-#include <sys/time.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <netdb.h>
-#include <asm/types.h>
+#ifndef __NETLINK_H__
+#define __NETLINK_H__
+
+#include <linux/skbuff.h>
 #include <linux/netlink.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <pwd.h>
-#include "haze_list.h"
+#include <linux/net.h>
+#include <net/sock.h>
 
-extern int haze_nl_sk;
+/*
+* Define muxtex lock for netlink
+*/
+#include  <linux/mutex.h>
+#define netlink_lock_init(lock) do{ \
+    mutex_init(&(lock)); \
+}while(0)
+#define netlink_lock(lock) do{ \
+    mutex_lock(&(lock)); \
+}while(0)
+#define netlink_unlock(lock) do{ \
+    mutex_unlock(&(lock)); \
+}while(0)
+#define netlik_lock_destory(lock) do{ \
+}while(0)
 
-int haze_nl_init(int *nl_sd ,int protocol);
+typedef struct netlink_socket_{
+    struct sock *sock; 
+    int unit;
+    pid_t master_pid;
+    struct mutex lock;
+} netlink_socket_t;
 
-int haze_nl_send(int sk_fd,void *emsg,size_t len);
+int nelk_init(void);
+void nelk_rele(netlink_socket_t *nelk);
+extern netlink_socket_t nelkskt;
+int nelk_send(pid_t pid, void *data, int datalen, u16 msg_type, u16 msg_flags);
 
-int haze_nl_recv(int sk_fd,void **emsg,int *emsg_len);
-
-void haze_nl_exit(int fd);
-
-
-#endif
+#endif//__NETLINK_H__
