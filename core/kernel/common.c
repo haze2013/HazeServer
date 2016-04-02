@@ -1,5 +1,4 @@
 #include "common.h"
-
 char *replace(char *buf, int len, char org, char dest)
 {
                 char *p=buf, *end=buf+len;
@@ -49,6 +48,7 @@ unsigned long  clear_and_return_cr0(void)
 
 void  setback_cr0(unsigned long val)
 {
+#if 0
 #ifndef __64_BIT__
         asm volatile ("movq %%rax, %%cr0"
                         :
@@ -61,6 +61,13 @@ void  setback_cr0(unsigned long val)
                      );
 
 #endif
+#endif
+asm volatile ("movl %%eax, %%cr0"
+                        :
+                        : "a"(val)
+                     );
+
+
 }
 
 /************************

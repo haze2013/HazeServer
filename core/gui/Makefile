@@ -2,8 +2,8 @@
 #author Haze.C
 CC = gcc
 TARGET = xface
-Objs =  main.o haze_framework.o haze_signal.o haze_nelk.o haze_event.o haze_ui.o  
-GTKLIB = `pkg-config gtk+-2.0 --cflags --libs gthread-2.0` -std=gnu99 -I/usr/local/src/linux-3.13.1/include/ 
+Objs =  main.o haze_framework.o haze_sock.o haze_signal.o haze_event.o haze_ui.o  
+GTKLIB = `pkg-config gtk+-2.0 --cflags --libs gthread-2.0`
 
 all:	$(TARGET)
 $(TARGET):	$(Objs)
@@ -14,8 +14,8 @@ haze_signal.o:	haze_signal.c
 	gcc -c haze_signal.c $(GTKLIB) -o haze_signal.o
 haze_event.o:	haze_event.c
 	gcc -c haze_event.c $(GTKLIB) -o haze_event.o
-haze_nelk.o:	haze_nelk.c
-	gcc -c haze_nelk.c $(GTKLIB) -o haze_nelk.o
+haze_sock.o:	haze_sock.c
+	gcc -c haze_sock.c $(GTKLIB) -o haze_sock.o
 main.o:	main.c
 	gcc -c main.c $(GTKLIB) -o main.o
 haze_framework.o:	haze_framework.c

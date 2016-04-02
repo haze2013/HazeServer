@@ -1,7 +1,7 @@
 obj-m := HazeWorld.o
-HazeWorld-objs = hookfun.o haze.o netlink.o common.o haze_path.o
+HazeWorld-objs = hookfun.o haze.o common.o haze_path.o haze_socket.o
 KERNELBUILD := /lib/modules/$(shell uname -r)/build
-EXTRA_CFLAGS += -D__HAZE_NL__
+EXTRA_CFLAGS += -D__64_BIT_
 default:
 	make -C $(KERNELBUILD) M=$(shell pwd) modules
 clean:

@@ -22,5 +22,7 @@ do{	\
 
 void haze_main_fun(GtkWidget *widget ,gpointer arg);
 void haze_verify_ok(GtkWidget *widget ,gpointer arg);
+void haze_verify_no(GtkWidget *widget ,gpointer arg);
+
 
 #endif

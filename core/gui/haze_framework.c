@@ -25,8 +25,8 @@ void haze_signal(void)
 {
 	GTK_REGISTER_SIGNAL_START
 		BIND(hus.window ,"destroy" ,haze_main_fun ,NULL);
-//	BIND(hus.btn_yes ,"clicked" ,haze_verify_ok ,hus.label);
-//	BIND(hus.btn_no ,"clicked" ,haze_verify_ok ,NULL);
+		BIND(hus.btn_ok ,"clicked" ,haze_verify_ok ,hus.window);
+		BIND(hus.btn_no ,"clicked" ,haze_verify_no ,hus.window);
 	GTK_REGISTER_SIGNAL_END
 
 }

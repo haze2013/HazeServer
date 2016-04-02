@@ -3,133 +3,46 @@
 !_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
-!_TAG_PROGRAM_VERSION	5.8	//
-CACHE_FIND	hookfun.c	68;"	d	file:
-CACHE_MAX	hookfun.c	70;"	d	file:
-CACHE_NOFIND	hookfun.c	69;"	d	file:
-HW_DEV_CLEAN	hwdev.h	5;"	d
-HW_DEV_GETVALUE	hwdev.h	6;"	d
-HW_DEV_SETVALUE	hwdev.h	7;"	d
-HW_DEV_TYPE	hwdev.h	4;"	d
-HazeWorld-objs	Makefile	/^HazeWorld-objs = hookfun.o haze.o netlink.o common.o haze_path.o$/;"	m
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+HazeWorld-objs	Makefile	/^HazeWorld-objs = hookfun.o haze.o common.o haze_path.o haze_socket.o$/;"	m
 KERNELBUILD	Makefile	/^KERNELBUILD := \/lib\/modules\/$(shell uname -r)\/build$/;"	m
-MAJOR_NUM	hwdev.c	10;"	d	file:
-NIPQUAD	firewall.h	7;"	d
-PROC_NOFIND	hookfun.c	108;"	d	file:
-SLEEP_WAIT_SEC	watchdog.h	6;"	d
-VERIFY_PROC_TIMEOUT	hookfun.c	168;"	d	file:
-_HW_DEV	hwdev.h	2;"	d
-__BASE_FIREWALL_	firewall.h	2;"	d
 __COMMON_FILTER__	common.h	2;"	d
-__HAZE_FILE__	fileops.h	2;"	d
 __HAZE_HOOKFUN__	hookfun.h	2;"	d
 __HAZE_PATH__	haze_path.h	2;"	d
+__HAZE_SOCKET__	haze_socket.h	2;"	d
 __HAZE__	haze.c	2;"	d	file:
 __HOOKFUN_C_	hookfun.c	2;"	d	file:
-__H_WATCH_DOG_	watchdog.h	2;"	d
 __MODULE_HAZE__	haze.h	2;"	d
-__NETLINK_H__	netlink.h	2;"	d
-_nelk_recv	netlink.c	/^int _nelk_recv(struct sk_buff *skb)$/;"	f
-alist	netlink.h	/^	struct list_head alist;$/;"	m	struct:nl_status_list	typeref:struct:nl_status_list::list_head
-buffer	hwdev.c	/^    unsigned char buffer[50];$/;"	m	struct:mycdev	file:
-cdev	hwdev.c	/^    struct cdev cdev;$/;"	m	struct:mycdev	typeref:struct:mycdev::cdev	file:
-check_pic_cache	hookfun.c	/^int check_pic_cache(char *proc)$/;"	f
 clear_and_return_cr0	common.c	/^unsigned long  clear_and_return_cr0(void)$/;"	f
-cls	hwdev.c	/^struct class *cls;$/;"	v	typeref:struct:class
-cond	netlink.h	/^	int cond;$/;"	m	struct:nl_condition
-count	hookfun.c	/^int count;$/;"	v
-dev_fifo_exit	hwdev.c	/^module_exit(dev_fifo_exit);$/;"	v
-dev_fifo_exit	hwdev.c	/^void __exit dev_fifo_exit(void)$/;"	f
-dev_fifo_init	hwdev.c	/^int __init dev_fifo_init(void)$/;"	f
-dev_fifo_init	hwdev.c	/^module_init(dev_fifo_init);$/;"	v
-dev_fifo_open	hwdev.c	/^static int dev_fifo_open(struct inode *inode, struct file *file)$/;"	f	file:
-dev_fifo_read	hwdev.c	/^static ssize_t dev_fifo_read(struct file *file, char __user *ubuf, size_t size, loff_t *ppos)$/;"	f	file:
-dev_fifo_unlocked_ioctl	hwdev.c	/^long dev_fifo_unlocked_ioctl(struct file *file, unsigned int cmd,$/;"	f
-dev_fifo_write	hwdev.c	/^static ssize_t dev_fifo_write(struct file *file, const char __user *ubuf, size_t size, loff_t *ppos)$/;"	f	file:
-dev_num	hwdev.c	/^static dev_t dev_num = {0};$/;"	v	file:
-fifo_operations	hwdev.c	/^static const struct file_operations fifo_operations = {$/;"	v	typeref:struct:file_operations	file:
 find_struct_address	common.c	/^void *find_struct_address(char *func_name ,int flag)$/;"	f
 find_symbol_addr	common.c	/^unsigned long find_symbol_addr(char *symname)$/;"	f
-for_each_line	common.c	15;"	d	file:
-gcd	hwdev.c	/^struct mycdev *gcd;$/;"	v	typeref:struct:mycdev
-haze_check_verify	hookfun.c	/^int haze_check_verify(pid_t pid ,int *result)$/;"	f
+for_each_line	common.c	14;"	d	file:
+haze_close_socket	haze_socket.c	/^void haze_close_socket(struct socket *sock)$/;"	f
 haze_exit	haze.c	/^module_exit(haze_exit); $/;"	v
 haze_exit	haze.c	/^static void __exit haze_exit(void) {$/;"	f	file:
-haze_exit_verify	hookfun.c	/^int haze_exit_verify(void)$/;"	f
-haze_file_write	fileops.c	/^int haze_file_write(const char *path ,char *msg ,int len ,void **priv)$/;"	f
 haze_init	haze.c	/^module_init(haze_init);$/;"	v
 haze_init	haze.c	/^static int __init haze_init(void) $/;"	f	file:
+haze_init_socket	haze_socket.c	/^struct socket *haze_init_socket(struct socket *sock ,unsigned int remote ,unsigned int port)$/;"	f
 haze_lsm_hooks	hookfun.c	/^struct security_operations *haze_lsm_hooks = NULL;$/;"	v	typeref:struct:security_operations
 haze_lsm_load	hookfun.c	/^int haze_lsm_load(void)$/;"	f
 haze_lsm_unload	hookfun.c	/^void haze_lsm_unload(void)$/;"	f
-haze_nf_load	firewall.c	/^int haze_nf_load(void)$/;"	f
-haze_nf_ops	firewall.c	/^struct nf_hook_ops haze_nf_ops[] = {$/;"	v	typeref:struct:nf_hook_ops
-haze_nf_out	firewall.c	/^unsigned int haze_nf_out(unsigned int hooknum,$/;"	f
-haze_nf_pre_routine	firewall.c	/^unsigned int haze_nf_pre_routine(unsigned int hooknum,$/;"	f
-haze_nf_unload	firewall.c	/^void haze_nf_unload(void)$/;"	f
-haze_show_verifylist	hookfun.c	/^int haze_show_verifylist(pid_t pid)$/;"	f
+haze_recv_message	haze_socket.c	/^int haze_recv_message(struct socket *sock ,char *message ,int len)$/;"	f
+haze_send_message	haze_socket.c	/^int haze_send_message(struct socket *sock ,char *message ,int len)$/;"	f
 haze_sk_alloc	hookfun.c	/^int haze_sk_alloc(struct sock *sk, int family, gfp_t priority)$/;"	f
 haze_sk_free	hookfun.c	/^void haze_sk_free(struct sock *sk)$/;"	f
 haze_socket_connect	hookfun.c	/^int haze_socket_connect(struct socket *sock,struct sockaddr *address, int addrlen)$/;"	f
-haze_sys_tty_read	hookfun.c	/^ssize_t (*haze_sys_tty_read)(struct file *, char __user *, size_t , loff_t *);$/;"	v
 haze_task_info	common.h	/^struct haze_task_info {$/;"	s
-haze_thread_load	watchdog.c	/^int haze_thread_load(void)$/;"	f
-haze_thread_unload	watchdog.c	/^void haze_thread_unload(void)$/;"	f
-haze_tty_read	hookfun.c	/^ssize_t haze_tty_read(struct file *file, char __user *buf, size_t count, loff_t *ppos)$/;"	f
-inet_dgram_ops_hooks	hookfun.c	/^struct proto_ops           *inet_dgram_ops_hooks = NULL;$/;"	v	typeref:struct:proto_ops
-inet_stream_ops_hooks	hookfun.c	/^struct proto_ops           *inet_stream_ops_hooks = NULL;$/;"	v	typeref:struct:proto_ops
-len	hookfun.c	/^	int len;$/;"	m	struct:proc_info	file:
-len	hwdev.c	/^    int len;$/;"	m	struct:mycdev	file:
-list	netlink.h	/^	struct list_head list;$/;"	m	struct:nl_change_buf	typeref:struct:nl_change_buf::list_head
-lock	netlink.h	/^	spinlock_t  lock;$/;"	m	struct:nl_status_list
-lock	netlink.h	/^	spinlock_t lock;$/;"	m	struct:nl_condition
-lock	netlink.h	/^    struct mutex lock;$/;"	m	struct:netlink_socket_	typeref:struct:netlink_socket_::mutex
 lsm_alloc_security	hookfun.c	/^static int (*lsm_alloc_security)(struct sock *sk, int family, gfp_t priority);$/;"	v	file:
 lsm_free_security	hookfun.c	/^static void (*lsm_free_security)(struct sock *sk);$/;"	v	file:
 lsm_socket_connect	hookfun.c	/^int (*lsm_socket_connect) (struct socket *sock,struct sockaddr *address, int addrlen);$/;"	v
-master_pid	netlink.h	/^    pid_t master_pid;$/;"	m	struct:netlink_socket_
-my_queue	hookfun.c	/^wait_queue_head_t my_queue;$/;"	v
-mycdev	hwdev.c	/^struct mycdev $/;"	s	file:
-nc	netlink.c	/^struct nl_condition nc;$/;"	v	typeref:struct:nl_condition
-ndevices	hwdev.c	/^static int ndevices = 1;$/;"	v	file:
-nelk_init	netlink.c	/^int nelk_init(void)$/;"	f
-nelk_recv	netlink.c	/^void nelk_recv(struct sk_buff *skb)$/;"	f
-nelk_recv_helo	netlink.c	/^static int nelk_recv_helo(struct sk_buff *skb)$/;"	f	file:
-nelk_rele	netlink.c	/^void nelk_rele(netlink_socket_t *nelk)$/;"	f
-nelk_send	netlink.c	/^int nelk_send(pid_t pid, void *data, int datalen, u16 msg_type, u16 msg_flags)$/;"	f
-nelkskt	netlink.c	/^netlink_socket_t nelkskt;$/;"	v
-netlik_lock_destory	netlink.h	19;"	d
-netlink_lock	netlink.h	13;"	d
-netlink_lock_init	netlink.h	10;"	d
-netlink_socket_	netlink.h	/^typedef struct netlink_socket_{$/;"	s
-netlink_socket_t	netlink.h	/^} netlink_socket_t;$/;"	t	typeref:struct:netlink_socket_
-netlink_unlock	netlink.h	16;"	d
-nl_change_buf	netlink.h	/^struct nl_change_buf{$/;"	s
-nl_condition	netlink.h	/^struct nl_condition{$/;"	s
-nl_rtlist	netlink.c	/^struct nl_status_list nl_rtlist;$/;"	v	typeref:struct:nl_status_list
-nl_status_list	netlink.h	/^struct nl_status_list{$/;"	s
-num	netlink.h	/^	int num;$/;"	m	struct:nl_status_list
 obj-m	Makefile	/^obj-m := HazeWorld.o$/;"	m
 path	common.h	/^        char path[256];$/;"	m	struct:haze_task_info
-pid	netlink.h	/^	int pid;$/;"	m	struct:nl_change_buf
-proc	hookfun.c	/^	char proc[256];$/;"	m	struct:proc_info	file:
-proc	netlink.h	/^	char proc[256];$/;"	m	struct:nl_change_buf
-proc_info	hookfun.c	/^struct proc_info{$/;"	s	file:
-proc_info_cache	hookfun.c	/^struct proc_info_cache{$/;"	s	file:
 remain	common.h	/^	char remain[0];$/;"	m	struct:haze_task_info
 replace	common.c	/^char *replace(char *buf, int len, char org, char dest)$/;"	f
-result	netlink.h	/^	int result;$/;"	m	struct:nl_change_buf
 sec_file_path	haze_path.c	/^char *sec_file_path(struct file *file, char *buf, int len)$/;"	f
 sec_task_path	haze_path.c	/^char *sec_task_path(struct task_struct *task, char *buf, int len)$/;"	f
-serial	hookfun.c	/^	int serial;$/;"	m	struct:proc_info	file:
 setback_cr0	common.c	/^void  setback_cr0(unsigned long val)$/;"	f
-sock	netlink.h	/^    struct sock *sock; $/;"	m	struct:netlink_socket_	typeref:struct:netlink_socket_::sock
-store	hookfun.c	/^	struct proc_info store[5];$/;"	m	struct:proc_info_cache	typeref:struct:proc_info_cache::proc_info	file:
 sys_socket_post_accept	hookfun.c	/^int (*sys_socket_post_accept)(struct socket *,struct socket *, int);$/;"	v
 sys_socket_post_connect	hookfun.c	/^int (*sys_socket_post_connect)(struct socket *sock,struct sockaddr *vaddr,int sockaddr_len, int flags);$/;"	v
 sys_socket_post_recvmsg	hookfun.c	/^int (*sys_socket_post_recvmsg)(struct kiocb *iocb, struct socket *sock,struct msghdr *, size_t,int);$/;"	v
 sys_socket_post_sendmsg	hookfun.c	/^int (*sys_socket_post_sendmsg)(struct kiocb *,struct socket *,struct msghdr *,size_t);$/;"	v
-time	hookfun.c	/^	unsigned long time;$/;"	m	struct:proc_info_cache	file:
-unit	netlink.h	/^    int unit;$/;"	m	struct:netlink_socket_
-watchdog	watchdog.c	/^static struct task_struct *watchdog = NULL;$/;"	v	typeref:struct:task_struct	file:
-watchdog_run	watchdog.c	/^static int watchdog_run(void *data)$/;"	f	file:

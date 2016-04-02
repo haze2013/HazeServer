@@ -5,7 +5,7 @@
 struct haze_ui_struct{
 	GtkWidget *window;
 	GtkWidget *frame;
-	GtkWidget *btn_yes;
+	GtkWidget *btn_ok;
 	GtkWidget *btn_no;
 	GtkWidget *label;
 	int enable;
